@@ -232,7 +232,7 @@ def cc_external_rule_impl(ctx, attrs):
         set_cc_envs,
         "export EXT_BUILD_ROOT=##pwd##",
         "export BUILD_TMPDIR=##tmpdir##",
-        "export EXT_BUILD_DEPS=$$EXT_BUILD_ROOT$$/bazel_foreign_cc_deps_" + lib_name,
+        "export EXT_BUILD_DEPS=$$EXT_BUILD_ROOT$$/" + empty.file.dirname + "/bazel_foreign_cc_deps_" + lib_name,
         "export INSTALLDIR=$$EXT_BUILD_ROOT$$/" + empty.file.dirname + "/" + lib_name,
     ]
 
